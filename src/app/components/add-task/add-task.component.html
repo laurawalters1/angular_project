@@ -1,0 +1,25 @@
+<form action="" class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Task</label>
+        <small [className]="isText ? 'd-none' : 'textError'">Please add a task!</small>
+        <input [className]="isText ? '' : 'emptyField'" type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task">
+    </div>
+    <div class="form-control">
+        <label for="day">Day & Time</label>
+        <small [className]="isDay ? 'd-none' : 'textError'">Please add a Day & Time!</small>
+        <input type="text" [className]="isDay ? '' : 'emptyField'"  name="day" id="day" [(ngModel)]="day" placeholder="Add Day & Time">
+    </div>
+    <div class="form-control">
+        <label for="reminder">Set Reminder</label>
+        <!-- <input type="" name="reminder" id="reminder" [(ngModel)]="reminder" > -->
+        <small [className]="isReminder ? 'd-none' : 'textError'">Please select an option!</small>
+        <br [className]="isReminder ? 'd-none' : ''">
+        <select name="reminder" id="reminder"  [(ngModel)]="reminder" [className]="isReminder ? '' : 'emptyField'">
+              <option [ngValue]="null"  [selected]="true"  > Please select an option</option>
+              <option [ngValue]="true">Yes</option>
+              <option [ngValue]="false">No</option>
+        </select>
+    </div>
+    
+    <input type="submit" value="Save Task" class="btn btn-block">
+</form>

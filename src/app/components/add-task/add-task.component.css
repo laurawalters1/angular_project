@@ -1,0 +1,11 @@
+.emptyField {
+    border: solid 1px red !important;
+}
+
+.textError {
+    color: red;
+}
+
+.d-none {
+    display: none;
+}
